@@ -1,9 +1,9 @@
 <?php
     namespace PHP\Modelo\Tela;
-    require_once('..\Cliente.php');
+    require_once('..\Funcionario.php');
     require_once('..\DAO\Conexao.php');
     require_once('..\DAO\Inserir.php');
-    use PHP\Modelo\Cliente;
+    use PHP\Modelo\Funcionario;
     use PHP\Modelo\DAO\Conexao;
     use PHP\Modelo\DAO\Inserir;
 ?>
@@ -11,7 +11,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Cadastro Cliente</title>
+        <title>Cadastro Funcionário</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     </head>
@@ -38,34 +38,34 @@
         </div>
 
         <div class="mb-3">
-            <label for="lTotal" class="form-label">Total de Compras</label>
-            <input type="text" class="form-control" id="tTotal" name="tTotal" placeholder="Insira o total de compras">
+            <label for="lSalario" class="form-label">Salário</label>
+            <input type="text" class="form-control" id="tSalario" name="tSalario" placeholder="Insira o Salário">
         </div>
 
         <button type="submit">Cadastrar
             <?php
-                $conexao = new Conexao();//Conectar no Banco
-
+                $conexao = new Conexao();
                 if(isset($_POST['tCpf'])){
                     $cpf      = $_POST['tCpf'];
                     $nome     = $_POST['tNome'];
                     $telefone = $_POST['tTelefone'];
                     $endereco = $_POST['tEndereco'];
-                    $total    = $_POST['tTotal'];
+                    $salario  = $_POST['tSalario'];
                 
-                    //Instanciar
-                    $inserir = new Inserir();
-                    echo $inserir->cadastrarCliente($conexao,
-                                                    $cpf,
-                                                    $nome,
-                                                    $telefone,
-                                                    $endereco,
-                                                    $total);
+                  //Instanciar
+                  $inserir = new Inserir();
+                  echo $inserir->cadastrarFuncionario($conexao,
+                                                  $cpf,
+                                                  $nome,
+                                                  $telefone,
+                                                  $endereco,
+                                                  $salario);
                 }//fim do if isset
                 
             ?>
         </button>
         </form>
+     
     </body>
 </html>
 
