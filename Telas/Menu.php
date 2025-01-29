@@ -11,6 +11,11 @@
 <body>
     <a href="cadastroFuncionario.php"><button>Cadastrar Funcionário</button></a>
     <a href="cadastroCliente.php"><button>Cadastrar Cliente</button></a>
-    <a href="consultarCliente.php"><buttton>Consultar Cliente</button></a>
+    <a href="consultarCliente.php"><button>Consultar Cliente</button></a>
+    <a href="consultarFuncionario.php"><button>Consultar Funcionário</button></a>
+    <a href="atualizarCliente.php"><button>Atualizar Cliente</button></a>
+    <a href="atualizarFuncionario.php"><button>Atualizar Funconário</button></a>
+    <a href="excluirCliente.php"><button>Excluir Cliente</button></a>
+    <a href="excluirFuncionario.php"><button>Excluir Funcionario</button></a>
 </body>
 </html>
